@@ -24,12 +24,12 @@ def rotate(record, newpassword):
 
     p = pexpect.spawn('bash', timeout=300)
     i = p.expect(prompt) 
-    print('Connecting to super user %s'%(user))
+    print(('Connecting to super user %s'%(user)))
     p.sendline('su - %s' % (user))
     i = p.expect('[Pp]assword')
     p.sendline(oldpassword)
     i = p.expect(prompt)
-    print('Changing password for %s'%(user))
+    print(('Changing password for %s'%(user)))
     p.sendline('passwd')
     i = p.expect(['[Oo]ld [Pp]assword', '.current.*password', '[Nn]ew [Pp]assword'])
     l = p.before

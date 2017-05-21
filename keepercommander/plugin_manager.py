@@ -19,12 +19,12 @@ def load_plugin(module_name):
     """Load plugin based on name"""
     full_name = 'keepercommander.plugins.' + module_name
     try:
-        print('Importing ' + str(full_name))
+        print(('Importing ' + str(full_name)))
         imported_plugins[module_name] = \
             importlib.import_module(full_name)
     except Exception as e:
-        print(e.args[0])
-        print('Unable to load module ' + full_name)
+        print((e.args[0]))
+        print(('Unable to load module ' + full_name))
 
 
 def get_plugin(module_name):

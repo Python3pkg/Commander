@@ -31,24 +31,24 @@ class SharedFolder:
 
     def display(self):
         print('') 
-        print('{0:>20s}: {1:<20s}'.format('Shared Folder UID',self.shared_folder_uid))
-        print('{0:>20s}: {1}'.format('Revision',self.revision))
-        print('{0:>20s}: {1}'.format('Name',self.name))
-        print('{0:>20s}: {1}'.format('Manage Records',self.manage_records))
-        print('{0:>20s}: {1}'.format('Manage Users',self.manage_users))
+        print(('{0:>20s}: {1:<20s}'.format('Shared Folder UID',self.shared_folder_uid)))
+        print(('{0:>20s}: {1}'.format('Revision',self.revision)))
+        print(('{0:>20s}: {1}'.format('Name',self.name)))
+        print(('{0:>20s}: {1}'.format('Manage Records',self.manage_records)))
+        print(('{0:>20s}: {1}'.format('Manage Users',self.manage_users)))
         print('')
-        print('{0:>20s}:'.format('Record Permissions'))
+        print(('{0:>20s}:'.format('Record Permissions')))
 
         if len(self.records) > 0:
             for r in self.records:
-                print('{0:>20s}: {1}: {2}, {3}: {4}'.format(r['record_uid'],'Can Edit',r['can_edit'],'Can Share',r['can_share']))
+                print(('{0:>20s}: {1}: {2}, {3}: {4}'.format(r['record_uid'],'Can Edit',r['can_edit'],'Can Share',r['can_share'])))
 
         print('')
-        print('{0:>20s}:'.format('User Permissions'))
+        print(('{0:>20s}:'.format('User Permissions')))
 
         if len(self.users) > 0:
             for u in self.users:
-                print('{0:>20s}: {1}: {2}, {3}: {4}'.format(u['username'],'Can Manage Records',u['manage_records'],'Can Manage Users',u['manage_users']))
+                print(('{0:>20s}: {1}: {2}, {3}: {4}'.format(u['username'],'Can Manage Records',u['manage_records'],'Can Manage Users',u['manage_users'])))
 
         print('')
 

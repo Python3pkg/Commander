@@ -42,7 +42,7 @@ def generateFromRules(rulestring):
     """ Generate based on rules from a string similar to "4,5,2,5" """
     uppercase, lowercase, digits, special = 0,0,0,0
 
-    ruleparams = filter(str.isdigit, rulestring)
+    ruleparams = list(filter(str.isdigit, rulestring))
 
     rulecount = 0
     for rule in ruleparams:

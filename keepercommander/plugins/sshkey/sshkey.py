@@ -83,10 +83,10 @@ def rotate(record, newpassword):
                         (out_child, error_child) = child.communicate(timeout=10)
 
                     if error_child:
-                        print('Host: {0}: Warning: {1}'.format(host, error_child.decode()))
+                        print(('Host: {0}: Warning: {1}'.format(host, error_child.decode())))
 
                 except Exception as e:
-                    print('Authorized Keys upload to host: {0}: {1}'.format(host, e))
+                    print(('Authorized Keys upload to host: {0}: {1}'.format(host, e)))
 
         record.set_field('cmdr:private_key', newPrivateKey)
         record.set_field('cmdr:rsa_public_key', newPublicKeyPEM)

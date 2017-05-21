@@ -64,7 +64,7 @@ def rotate(record, newpassword):
                 return True
         else:
             if error1 is not None:
-                print("Error: Create AWS access key for user {1}: {0}".format(error1.decode(), record.login))
+                print(("Error: Create AWS access key for user {1}: {0}".format(error1.decode(), record.login)))
 
     except Exception as e:
         print(e)

@@ -66,23 +66,23 @@ class Record:
 
     def display(self):
         print('') 
-        print('{0:>20s}: {1:<20s}'.format('UID',self.record_uid))
-        print('{0:>20s}: {1}'.format('Revision',self.revision))
-        if self.folder: print('{0:>20s}: {1:<20s}'.format('Folder',self.folder))
-        if self.title: print('{0:>20s}: {1:<20s}'.format('Title',self.title))
-        if self.login: print('{0:>20s}: {1:<20s}'.format('Login',self.login))
-        if self.password: print('{0:>20s}: {1:<20s}'.format('Password',self.password))
-        if self.login_url: print('{0:>20s}: {1:<20s}'.format('URL',self.login_url))
-        print('{0:>20s}: https://keepersecurity.com/vault#detail/{1}'.format('Link',self.record_uid))
+        print(('{0:>20s}: {1:<20s}'.format('UID',self.record_uid)))
+        print(('{0:>20s}: {1}'.format('Revision',self.revision)))
+        if self.folder: print(('{0:>20s}: {1:<20s}'.format('Folder',self.folder)))
+        if self.title: print(('{0:>20s}: {1:<20s}'.format('Title',self.title)))
+        if self.login: print(('{0:>20s}: {1:<20s}'.format('Login',self.login)))
+        if self.password: print(('{0:>20s}: {1:<20s}'.format('Password',self.password)))
+        if self.login_url: print(('{0:>20s}: {1:<20s}'.format('URL',self.login_url)))
+        print(('{0:>20s}: https://keepersecurity.com/vault#detail/{1}'.format('Link',self.record_uid)))
         
         if len(self.custom_fields) > 0:
             for c in self.custom_fields:
                 if not 'value' in c: c['value'] = ''
                 if not 'name' in c: c['name'] = ''
-                print('{0:>20s}: {1:<s}'.format(c['name'], c['value']))
+                print(('{0:>20s}: {1:<s}'.format(c['name'], c['value'])))
 
         if self.notes:
-            print('{0:>20s}: {1:<20s}'.format('Notes',self.notes))
+            print(('{0:>20s}: {1:<20s}'.format('Notes',self.notes)))
 
         print('')
 

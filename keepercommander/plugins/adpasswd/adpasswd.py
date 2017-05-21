@@ -43,7 +43,7 @@ def rotate(record, newpassword):
             record.password = newpassword
             result = True
         else:
-            print("Server returned this message: %s" % (changePwdResult))
+            print(("Server returned this message: %s" % (changePwdResult)))
 
         conn.unbind()
     except:

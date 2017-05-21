@@ -36,7 +36,7 @@ def rotate(record, newpassword):
                                      password=oldpassword)
 
         with connection.cursor() as cursor:
-            print("Connected to %s"%(host))
+            print(("Connected to %s"%(host)))
             # Create a new record
             sql = 'ALTER USER %s IDENTIFIED BY "%s" ACCOUNT UNLOCK'%(user, newpassword)
             cursor.execute(sql)

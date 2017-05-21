@@ -5,7 +5,7 @@ from keepercommander import main, __version__
 
 TEST_CONFIG_FILE = os.path.join(os.path.dirname(__file__), 'config.json')
 TEST_DATA_FILE = os.path.join(os.path.dirname(__file__), 'tstdata.txt')
-print('\nConfig file: ' + TEST_CONFIG_FILE)
+print(('\nConfig file: ' + TEST_CONFIG_FILE))
 
 def test_version():
     runner = CliRunner()

@@ -27,13 +27,13 @@ class bcolors:
 
 def welcome():
     print('\n')
-    print(bcolors.OKBLUE,' _  __  ' + bcolors.ENDC)
-    print(bcolors.OKBLUE,'| |/ /___ ___ _ __  ___ _ _ ' + bcolors.ENDC)
-    print(bcolors.OKBLUE,'| \' </ -_) -_) \'_ \\/ -_) \'_|' + bcolors.ENDC)
-    print(bcolors.OKBLUE,'|_|\\_\\___\\___| .__/\\___|_|' + bcolors.ENDC)
-    print(bcolors.OKBLUE,'             |_|            ' + bcolors.ENDC)
+    print((bcolors.OKBLUE,' _  __  ' + bcolors.ENDC))
+    print((bcolors.OKBLUE,'| |/ /___ ___ _ __  ___ _ _ ' + bcolors.ENDC))
+    print((bcolors.OKBLUE,'| \' </ -_) -_) \'_ \\/ -_) \'_|' + bcolors.ENDC))
+    print((bcolors.OKBLUE,'|_|\\_\\___\\___| .__/\\___|_|' + bcolors.ENDC))
+    print((bcolors.OKBLUE,'             |_|            ' + bcolors.ENDC))
     print('')
-    print(bcolors.FAIL,'password manager & digital vault' + bcolors.ENDC)
+    print((bcolors.FAIL,'password manager & digital vault' + bcolors.ENDC))
     print('')
     print('')
 
@@ -46,7 +46,7 @@ def formatted_records(records):
     if len(records) > 0:
 
         table = [[i + 1, r.record_uid, r.folder, r.title] for i, r in enumerate(records)]
-        print(tabulate(table, headers=["#", 'Record UID', 'Folder', 'Title']))
+        print((tabulate(table, headers=["#", 'Record UID', 'Folder', 'Title'])))
 
         print('')
 
@@ -64,7 +64,7 @@ def formatted_shared_folders(shared_folders):
     if len(shared_folders) > 0:
 
         table = [[i + 1, sf.shared_folder_uid, sf.name] for i, sf in enumerate(shared_folders)]
-        print(tabulate(table, headers=["#", 'Shared Folder UID', 'Name']))
+        print((tabulate(table, headers=["#", 'Shared Folder UID', 'Name'])))
 
         print('')
 

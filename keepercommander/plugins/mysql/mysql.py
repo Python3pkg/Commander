@@ -51,9 +51,9 @@ def rotate(record, newpassword):
         record.password = newpassword
         result = True
     except pymysql.err.OperationalError as e:
-        print("MySQL Plugin Error: Unable to establish connection: " + str(e))
+        print(("MySQL Plugin Error: Unable to establish connection: " + str(e)))
     except pymysql.err.ProgrammingError as e:
-        print("MySQL Plugin Syntax Error: " + str(e))
+        print(("MySQL Plugin Syntax Error: " + str(e)))
     except:
         print("Error during connection to MySQL server")
     finally:

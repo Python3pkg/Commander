@@ -18,7 +18,7 @@ def export(params, format, filename):
         with open(filename, 'wt') as f:
             for record in records:
                 f.write(record.to_tab_delimited() + '\n')
-            print('{0} records exported to {1}'.format(len(records), filename))
+            print(('{0} records exported to {1}'.format(len(records), filename)))
 
 
 def parse_line(line):
@@ -67,15 +67,15 @@ def _import(params, format, filename):
         return
 
     request = api.make_request(params, 'record_update')
-    print('importing {0} records to Keeper'.format(len(records_to_add)))
+    print(('importing {0} records to Keeper'.format(len(records_to_add))))
     request['add_records'] = records_to_add
     response_json = api.communicate(params, request)
     success = [info for info in response_json['add_records'] if info['status'] == 'success']
     if len(success) > 0:
-        print("{0} records imported successfully".format(len(success)))
+        print(("{0} records imported successfully".format(len(success))))
     failures = [info for info in response_json['add_records'] if info['status'] != 'success']
     if len(failures) > 0:
-        print("{0} records failed to import".format(len(failures)))
+        print(("{0} records failed to import".format(len(failures))))
 
 
 def delete_all(params):
@@ -84,12 +84,12 @@ def delete_all(params):
         print('No records to delete')
         return
     request = api.make_request(params, 'record_update')
-    print('removing {0} records from Keeper'.format(len(params.record_cache)))
-    request['delete_records'] = [key for key in params.record_cache.keys()]
+    print(('removing {0} records from Keeper'.format(len(params.record_cache))))
+    request['delete_records'] = [key for key in list(params.record_cache.keys())]
     response_json = api.communicate(params, request)
     success = [info for info in response_json['delete_records'] if info['status'] == 'success']
     if len(success) > 0:
-        print("{0} records deleted successfully".format(len(success)))
+        print(("{0} records deleted successfully".format(len(success))))
     failures = [info for info in response_json['delete_records'] if info['status'] != 'success']
     if len(failures) > 0:
-        print("{0} records failed to delete".format(len(failures)))
+        print(("{0} records failed to delete".format(len(failures))))

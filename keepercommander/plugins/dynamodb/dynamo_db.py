@@ -27,12 +27,12 @@ def rotate(record, newpassword):
     try:
         dynamo_table = record.get("cmdr:dyn_tbl_name")
         if not dynamo_table:
-            print("\"{0}\" custom field is missing. This field containd DynamoDB table name".format("cmdr:dyn_tbl_name"))
+            print(("\"{0}\" custom field is missing. This field containd DynamoDB table name".format("cmdr:dyn_tbl_name")))
             return False
 
         dynamo_attribute = record.get("cmdr:dyn_attr_name")
         if not dynamo_attribute:
-            print("\"{0}\" custom field is missing. This field containd DynamoDB attribute name which value will be rotated".format("cmdr:dyn_attr_name"))
+            print(("\"{0}\" custom field is missing. This field containd DynamoDB attribute name which value will be rotated".format("cmdr:dyn_attr_name")))
             return False
 
         dynamo_key_value = record.login
@@ -61,7 +61,7 @@ def rotate(record, newpassword):
                 record.set_field("cmdr:dyn_key_name", dynamo_key_name)
             else:
                 if not error1:
-                    print("Error: DynamoDB: describe-table: {0}".format(error1.decode()))
+                    print(("Error: DynamoDB: describe-table: {0}".format(error1.decode())))
 
         key = json.dumps({dynamo_key_name: {"S": dynamo_key_value}})
         attr = json.dumps({dynamo_attribute: {"Action": "PUT", "Value": {"S": newpassword}}})
@@ -81,7 +81,7 @@ def rotate(record, newpassword):
             return True
         else:
             if not error1:
-                print("Error: DynamoDB: update-item: {0}".format(error1.decode()))
+                print(("Error: DynamoDB: update-item: {0}".format(error1.decode())))
 
     except Exception as e:
         print(e)

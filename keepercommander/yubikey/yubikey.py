@@ -17,7 +17,7 @@ def get_response(challenge):
         response = YK.challenge_response(challenge.encode(), slot=2)
 
     except yubico.yubico_exception.YubicoError as inst:
-        print("ERROR: %s" % inst.reason)
+        print(("ERROR: %s" % inst.reason))
         return ''
 
     # Workaround for http://bugs.python.org/issue24596
